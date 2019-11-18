@@ -1,0 +1,20 @@
+#include <stdio.h>
+int main(void)
+{
+   int c,s;
+   printf("Enter the value of s\n");
+   scanf("%d",&s);
+   printf("Enter the value of c\n");
+   scanf("%d",&c);
+   if (c<=s)
+   {
+       printf("you are in profit\n");
+       printf("profit=%d\n",(s-c));
+   }
+   else
+   {
+       printf("you are in loss\n");
+       printf("loss=%d\n",(c-s));
+   }
+    return 0;
+}
