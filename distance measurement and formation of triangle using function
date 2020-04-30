@@ -1,0 +1,45 @@
+#include<stdio.h>
+#include<math.h>
+void dis(float *a,float *b,float *c,float *d,float *e,float *f,float *s1,float *s2,float *s3,float *s);
+void area(float *m,float *n,float *o,float *p,float *ar);
+void position(float *x1,float *y1,float *x4,float *y4);
+void main()
+{
+    float x1,y1,x2,y2,x3,y3,x4,y4,r1,r2,r3,r,ar1,ar2;
+    scanf("%f%f%f%f%f%f",&x1,&y1,&x2,&y2,&x3,&y3);
+    dis(&x1,&y1,&x2,&y2,&x3,&y3,&r1,&r2,&r3,&r);
+    printf("length of side1 %f\n",r1);
+    printf("length of side2%f\n",r2);
+    printf("length of side3%f\n",r3);
+    area(&r1,&r2,&r3,&r,&ar1);
+    printf("area=%f\n",ar1);
+    printf("five the co ordinbates to find its position relative to triangle");
+    scanf("%f%f",&x4,&y4);
+    position(&x1,&x2,&x4,&y4);
+    dis(&x1,&y1,&x2,&y2,&x3,&y3,&r1,&r2,&r3,&r);
+    area(&r1,&r2,&r3,&r,&ar2);
+    if (ar1>ar2)
+        printf("it is inside ");
+    else
+        printf("it is outside");
+
+
+
+}
+void dis(float *a,float *b,float *c,float *d,float *e,float *f,float *s1,float *s2,float *s3,float *s)
+{
+    *s1=pow(((*a-*c)*(*a-*c)+(*b-*d)*(*b-*d)),0.5);
+    *s2=pow(((*a-*e)*(*a-*e)+(*b-*f)*(*b-*f)),0.5);
+    *s3=pow(((*e-*c)*(*e-*c)+(*f-*d)*(*f-*d)),0.5);
+    *s=(*s1+*s2+*s3)*0.5;
+}
+void area(float *m,float *n,float *o,float *p,float *ar)
+{
+    *ar=sqrt((*p*(*p-*m)*(*p-*n)*(*p-*o)));
+}
+void position(float *x1,float *y1,float *x4,float *y4)
+{
+    *x1=*x4;
+    *y1=*y4;
+
+}
