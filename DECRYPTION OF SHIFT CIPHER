@@ -1,0 +1,22 @@
+#include<stdio.h>
+#include<string.h>
+void main()
+{
+    char str1[10000];
+    int j,t,i,k,c;
+    printf("enter your ciphertext\n");
+    gets(str1);
+    j=strlen(str1);
+    printf("enter your symmetric key\n");
+    scanf("%d",&k);
+    printf("your plaintext is=");
+    for(i=0;i<j;i++)
+    {
+        t=(str1[i]);
+        c=(t-k)%255;
+        printf("%c",c);
+    }
+
+
+}
+
