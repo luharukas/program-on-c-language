@@ -1,0 +1,85 @@
+#include<stdio.h>
+struct bank
+{
+    int acc_no;
+    char name[20];
+    int bal;
+};
+void main()
+{
+    struct bank pro[5];
+    int i,ch;
+    for(i=0;i<5;i++)
+    {
+        printf("enter details of %d coustmer\n",i+1);
+        printf("*********************************\n");
+        printf("enter the account no\n");
+        scanf("%d",&pro[i].acc_no);
+        printf("enter the name\n");
+        scanf("%s",&pro[i].name);
+        printf("enter the balance\n");
+        scanf("%d",&pro[i].bal);
+
+    }
+    printf("enter your choice\n");
+    printf("1: to get list of couster below min balance\n");
+    printf("2: to do transaction\n");
+    scanf("%d",&ch);
+    switch(ch)
+    {
+        case(1):min(&pro);
+                break;
+        case(2):trans(&pro);
+                break;
+    }
+}
+min(struct bank *a)
+{
+    int minbal,i;
+    printf("enter the min balance\n");
+    scanf("%d",&minbal);
+    for (i=0;i<5;i++)
+    {
+        if (minbal>a[i].bal)
+        {
+            printf("%d %s %d ",a[i].acc_no,a[i].name,a[i].bal);
+        }
+    }
+
+}
+trans(struct bank *a)
+{
+    int no,ch,minbal,i,wbal,dbal;
+    printf("enter the min balance\n");
+    scanf("%d",&minbal);
+    printf("enter your account no\n");
+    scanf("%d",&no);
+   for (i=0;i<5;i++)
+   {
+       if (no==a[i].acc_no)
+       {
+           printf("Hello! %s\n",a[i].name);
+       }
+   }
+   printf("what do you want to do\n");
+   printf("1: deposit");
+   printf("2: withdrawal");
+   scanf("%d",&ch);
+   switch(ch)
+   {
+
+        case(1): printf("enter the amount of deposit");
+                scanf("%d",dbal);
+                a[i].bal=a[i].bal+dbal;
+                printf("%d   %s    %d",a[i].acc_no,a[i].name,a[i].bal);
+                break;
+        case(2): printf("enter the amount of withdrawal");
+                scanf("%d",&wbal);
+                if (a[i].bal-wbal<minbal)
+                {
+                    printf("it is insufficient to withdrwal");
+                }
+                break;
+   }
+
+}
