@@ -1,0 +1,37 @@
+#include<stdio.h>
+void main()
+{
+    int array[100],n,i,num,first,mid,last;
+    printf("how many data u want to enter");
+    scanf("%d",&n);
+    printf("enter your data");
+    for (i=0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+    printf("enter the number you want to search");
+    scanf("%d",&num);
+    first=0;
+    last=n-1;
+    mid=(first+last)/2;
+    while(first<=last)
+    {
+        if (array[mid]<num)
+        {
+            first=mid+1;
+            mid=(first+last)/2;
+        }
+        else if (array[mid]==num)
+        {
+            printf("%d is your %d element",num,mid+1);
+            break;
+        }
+        else
+        {
+            last=mid-1;
+            mid=(first+last)/2;
+        }
+    }
+    if(first>last)
+    printf("%d is not available",num);
+}
