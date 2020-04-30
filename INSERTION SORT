@@ -1,0 +1,27 @@
+#include<stdio.h>+
+void main()
+{
+    int data[25],i,j,temp,key;
+    printf("enter your data");
+    for(i=0;i<5;i++)
+    {
+        scanf("%d",&data[i]);
+    }
+    for (j=1;j<5;j++){
+        key=data[j];
+        i=j-1;
+        while (key<data[i]&&i>=0)
+        {
+            temp=data[i+1];
+            data[i+1]=data[i];
+            data[i]=temp;
+            i=i-1;
+        }
+
+    }
+    for(i=0;i<5;i++)
+    {
+        printf("%d  ",data[i]);
+    }
+
+}
