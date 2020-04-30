@@ -1,0 +1,24 @@
+#include<stdio.h>
+void main()
+{
+    int array[100],i,n,ar,step;
+    printf("how many data u want to enter");
+    scanf("%d",&n);
+    printf("enter your data");
+    for (i=0;i<n;i++)
+    {
+        scanf("%d",&array[i]);
+    }
+   for(step=0;step<=n-1;step++)
+    for (i=0;i<n-step-1;i++)
+   {
+       if (array[i]>array[i+1])
+       {
+           ar=array[i+1];array[i+1]=array[i];array[i]=ar;
+       }
+   }
+   for (i=0;i<n;i++){
+    printf("%d    ",array[i]);
+   }
+
+}
