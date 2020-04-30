@@ -1,0 +1,21 @@
+#include<stdio.h>
+void main()
+{
+    int data1[100],i,n,j,data2[100];
+    printf("how many data you want to enter");
+    scanf("%d",&n);
+    for(i=0;i<n;i++)
+    {
+        printf("%d.enter data=",i+1);
+        scanf("%d",&data1[i]);
+    }
+        for(i=0;i<n;i++)
+    {
+        data2[i]=data1[n-1-i];
+    }
+    for(i=0;i<n;i++)
+    {
+        printf("%d  ",data2[i]);
+    }
+
+}
