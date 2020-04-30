@@ -1,0 +1,46 @@
+#include<stdio.h>
+ struct student
+    {
+        int roll;char name[20];char dept[5];char course[5];int yoa;
+    };
+int main()
+{
+    struct student stu[10];
+    int i;int dh;int yoa2;int roll2;
+    for(i=0;i<10;i++)
+    {
+        printf("enter the roll,name,dept,course,yoa");
+        scanf("%d %s %s %s %d",&stu[i].roll,&stu[i].name,&stu[i].dept,&stu[i].course,&stu[i].yoa);
+
+    }
+    printf("enter the yoa");
+    scanf("%d",&yoa2);
+    viayoa(yoa2,&stu);
+    printf("enter the roll no");
+    scanf("%d",&roll2);
+    viaroll(roll2,&stu);
+}
+viayoa(int yoa2,struct student *a)
+{
+    int i;
+    for (i=0;i<10;i++)
+    {
+        if (yoa2==a[i].yoa)
+        {
+            printf("%d %s %s %s %d",a[i].roll,a[i].name,a[i].dept,a[i].course,a[i].yoa);
+        }
+    }
+}
+viaroll(int roll2,struct student *a)
+{
+
+    int i;
+    for(i=0;i<10;i++)
+    {
+        if (roll2==a[i].roll)
+        {
+            printf("%d %s %s %s %d",a[i].roll,a[i].name,a[i].dept,a[i].course,a[i].yoa);
+        }
+    }
+
+}
