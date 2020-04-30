@@ -1,0 +1,19 @@
+#include<stdio.h>
+void main()
+{
+    int isbn,sum=0,i;
+    printf("enter the ISBN");
+    scanf("%d",&isbn);
+    for(i=1;i<=10;i++)
+    {
+        sum=sum+(i*(isbn%10));
+
+        isbn=isbn/10;
+
+    }
+    printf("%d\n",sum);
+    if (sum%11==0)
+        printf("valid ISBN");
+    else
+        printf("Invalid ISBN");
+}
