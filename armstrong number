@@ -1,0 +1,28 @@
+/*Write a program to print out all Armstrong numbers between
+1 and 500. If sum of cubes of each digit of the number is
+equal to the number itself, then the number is called an
+Armstrong number. For example, 153 = ( 1 * 1 * 1 ) + ( 5 * 5
+* 5 ) + ( 3 * 3 * 3 ) */
+
+
+#include<stdio.h>
+main()
+{
+    int an,num=1,r1,r2,r3,r4;
+    while (num<=500)
+    {
+        r1=num%10;
+        r2=num/10;
+        r3=r2%10;
+        r4=r2/10;
+        an=pow(r1,3)+pow(r3,3)+pow(r4,3);
+        if (an==num)
+            printf("an no is %d",num);
+
+        num++;
+    }
+
+    return 0;
+
+
+}
